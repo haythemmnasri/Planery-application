@@ -1,0 +1,5 @@
+a[mat-raised-button] {
+    &:not(:last-child){
+        margin-right: 30px;
+    }
+}

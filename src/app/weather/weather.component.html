@@ -1,0 +1,39 @@
+<div class="container">
+
+    <form class="form">
+        <mat-form-field >
+          <input 
+          type="text" placeholder="City"
+          matInput
+          ngModel
+          name="city"
+          [formControl]="myControl" 
+          [matAutocomplete]="auto"
+          (ngModelChange)="selectCity(input.value)"
+          [(ngModel)]="selectedCity" #input>
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+
+        </mat-form-field>
+      </form>
+    <mat-card class="card">
+        <mat-card-header>
+            <div>
+                <mat-card-title >{{city}}</mat-card-title>
+                <mat-card-subtitle>{{state}}</mat-card-subtitle>
+                <mat-card-subtitle><b>{{temp}}</b>°C</mat-card-subtitle>
+            </div>
+            <div>
+                    <mat-card-subtitle ><b>Wind:</b> {{wind}} Km/h</mat-card-subtitle>
+                    <mat-card-subtitle><b>Humidity:</b> {{humidity}}%</mat-card-subtitle>
+            </div>
+            <div>
+
+                    <img  *ngIf="icon" [src] = "'https://openweathermap.org/img/wn/'+icon+'@2x.png'" alt="Weather London , GB" width="50" height="50"> 
+           </div>
+        </mat-card-header>
+    </mat-card>
+</div>

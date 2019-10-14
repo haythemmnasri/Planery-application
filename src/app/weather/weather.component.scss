@@ -1,0 +1,29 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 100px auto;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+mat-card-header > div{
+    &:not(:last-child){
+        margin-right: 30px;
+    }
+}
+
+mat-card{
+    max-width: 500px;
+    align-self: center;
+    margin: 30px 0px;
+}
+
+form{
+    width: 200px;
+    mat-form-field{
+        width: 100%;
+    }
+
+}
