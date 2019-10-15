@@ -1,11 +1,10 @@
-to install dependencies run the command:
+To install dependencies run the command: 
 npm install
 
-to run the project run the command:
+To run the project run the command:
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source file
 
 enjoy :D
-
 
 
 # PlaneryApplication
