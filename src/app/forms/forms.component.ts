@@ -11,22 +11,24 @@ export class FormsComponent implements OnInit {
   profileForm: FormGroup;
   tabsSelectedIndex = 0;
   infos: {}[]= [];
+
   constructor(private formBuilder: FormBuilder) {
    }
 
 
   ngOnInit() {
     this.profileForm = this.formBuilder.group({
-      firstName: ['Jane', Validators.required],
-      lastName: ['Doe', Validators.required],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
       adress: ['', Validators.required],
-      email: ['', [Validators.required, Validators.pattern('[a-z0-9.@]*')]],
-      phone: ['', [Validators.required, Validators.minLength(15)]]
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', [Validators.required, Validators.pattern( '[+43 ] |[0-9]+'), Validators.minLength(13  )]]
     });
+
   }
 
   onSubmit(form: FormGroup){
-    let categories = ['Adress', 'Email', 'First Name', 'Last Name', 'Phone Number']
+    let categories = ['First Name', 'Last Name', 'Address', 'Email', 'Phone Number']
     Object.keys(form.controls).forEach((formControl:any, key) =>{
       this.infos.push({'category':categories[key], 'value':form.controls[formControl].value });
     })
@@ -37,11 +39,13 @@ export class FormsComponent implements OnInit {
     this.tabsSelectedIndex = 0;
     this.profileForm.reset();
     this.infos = [];
+    this.profileForm.disabled = true;
     for(var name in this.profileForm.controls) {
       (this.profileForm.controls[name] as FormControl).setValue('');
       
       this.profileForm.controls[name].setErrors(null);
     }
+
   }
 
 }

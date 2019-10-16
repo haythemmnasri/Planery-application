@@ -7,7 +7,7 @@ import { FormsComponent } from './forms/forms.component';
 import { WeatherComponent } from './weather/weather.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { OverviewComponent } from './overview/overview.component';
+
 import { MaterialModule } from './material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -17,8 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     FormsComponent,
     WeatherComponent,
-    HomeComponent,
-    OverviewComponent
+    HomeComponent
     
   ],
   imports: [
