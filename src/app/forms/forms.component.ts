@@ -39,7 +39,6 @@ export class FormsComponent implements OnInit {
     this.tabsSelectedIndex = 0;
     this.profileForm.reset();
     this.infos = [];
-    this.profileForm.disabled = true;
     for(var name in this.profileForm.controls) {
       (this.profileForm.controls[name] as FormControl).setValue('');
       

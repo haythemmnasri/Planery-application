@@ -11,7 +11,7 @@ import {map, startWith} from "rxjs/operators";
 })
 export class WeatherComponent implements OnInit {
   temp: number;
-  city = "Linz";
+  city = "Germany";
   state: string;
   capitals = [];
   showNote = false;
